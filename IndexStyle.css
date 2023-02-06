@@ -1,0 +1,258 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    color: white;
+    background: black;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 300%;
+}
+
+.glowing {
+    position: relative;
+    left: 30%;
+    margin: 5% 0 0 0;
+    transform-origin: right;
+    animation: changeColor 10s linear infinite;
+}
+
+.glowing:nth-child(even){
+    transform-origin: left;
+}
+
+.glowing span {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+}
+
+.glowing span:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgb(2, 243, 211);
+    border-radius: 50%;
+}
+
+.glowing span:nth-child(5n + 1):before {
+    background: rgb(243, 7, 7);
+    box-shadow: 0 0 20px rgba(243, 7, 7),
+                0 0 40px rgba(243, 7, 7),
+                0 0 60px rgba(243, 7, 7),
+                0 0 80px rgba(243, 7, 7),
+                0 0 0 5px rgba(243, 7, 7, .1);
+}
+
+.glowing span:nth-child(5n + 2):before {
+    background: rgb(227, 243, 4);
+    box-shadow: 0 0 20px rgba(227, 243, 4),
+                0 0 40px rgba(227, 243, 4),
+                0 0 60px rgba(227, 243, 4),
+                0 0 80px rgba(227, 243, 4),
+                0 0 0 5px rgba(227, 243, 4, .1);
+}
+
+.glowing span:nth-child(5n + 3):before {
+    background: rgb(27, 6, 209);
+    box-shadow: 0 0 20px rgba(27, 6, 209),
+                0 0 40px rgba(27, 6, 209),
+                0 0 60px rgba(27, 6, 209),
+                0 0 80px rgba(27, 6, 209),
+                0 0 0 5px rgba(27, 6, 209, .1);
+}
+
+.glowing span:nth-child(5n + 4):before {
+    background: rgb(7, 242, 250);
+    box-shadow: 0 0 20px rgba(7, 242, 250),
+                0 0 40px rgba(7, 242, 250),
+                0 0 60px rgba(7, 242, 250),
+                0 0 80px rgba(7, 242, 250),
+                0 0 0 5px rgba(7, 242, 250, .1);
+}
+.glowing span:nth-child(5n + 5):before {
+    background: rgb(1, 7, 7);
+    box-shadow: 0 0 20px rgb(250, 7, 197),
+                0 0 40px rgba(250, 7, 197),
+                0 0 60px rgba(250, 7, 197),
+                0 0 80px rgba(250, 7, 197),
+                0 0 0 5px rgba(250, 7, 197, .1);
+}
+
+.glowing span:nth-child(5n + 1) {
+    animation: particle 25s alternate-reverse infinite;
+}
+
+.glowing span:nth-child(5n + 2) {
+    animation: particle-reverse 12s alternate infinite;
+}
+
+.glowing span:nth-child(5n + 3) {
+    animation: particle 20s alternate-reverse infinite;
+}
+
+.glowing span:nth-child(5n + 4) {
+    animation: particle-reverse 10s alternate infinite;
+}
+.glowing span:nth-child(5n + 5) {
+    animation: particle 18s alternate-reverse infinite;
+}
+
+#overall-container {
+    text-align: center;
+}
+
+section {
+    margin: 5% 0 5% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    line-height: 50px;
+    outline: none;
+    text-shadow: 0 0 10px yellowgreen;
+}
+
+h1 span {
+    color: white;
+    font-family: 'Explora', cursive;
+    font-size: 300%;
+    transition: 1.5s;
+}
+
+h1:hover span {
+    opacity: 0;
+    transform: scale(2);
+    filter: blur(25px);
+}
+
+h1 span:nth-child(10n+1) {
+    transition-delay: 0.4s;
+}
+
+h1 span:nth-child(10n+2) {
+    transition-delay: 0.3s;
+}
+
+h1 span:nth-child(10n+3) {
+    transition-delay: 0.2s;
+}
+
+h1 span:nth-child(10n+4) {
+    transition-delay: 0.2s;
+}
+
+h1 span:nth-child(10n+5) {
+    transition-delay: 0.1s;
+}
+
+h1 span:nth-child(10n+6) {
+    transition-delay: 0s;
+}
+
+h1 span:nth-child(10n+7) {
+    transition-delay: 0.1s;
+}
+
+h1 span:nth-child(10n+8) {
+    transition-delay: 0.2s;
+}
+
+h1 span:nth-child(10n+9) {
+    transition-delay: 0.3s;
+}
+
+h1 span:nth-child(10n+10) {
+    transition-delay: 0.4s;
+}
+
+h1 span:nth-child(10n+11) {
+    transition-delay: 0.5s;
+}
+
+
+#button-container {
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button {
+    padding: 1.5%;
+    margin: 2%;
+    background-color: #091010;
+    border: solid 2px rgba(255, 255, 0, 0.386);
+    color: white;
+    font-size: 80%;
+    letter-spacing: 5px;
+    border-radius: 50px;
+    animation: shineBox 4s infinite;
+    transition: 1s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    text-shadow: 0 0 15px yellowgreen;
+}
+
+button:active {
+    transform: scale(1);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+@keyframes shineBox {
+
+    0%,
+    100% {
+        box-shadow: 0px 0px 30px -20px yellowgreen inset, 
+                    0px 0px 70px -12px yellowgreen;
+    }
+
+    50% {
+        box-shadow: 0px 0px 30px 3px yellowgreen inset, 
+                    0px 0px 70px -12px yellowgreen;
+    }
+}
+
+
+@keyframes particle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes particle-reverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes changeColor {
+    
+    0% {
+        filter: hue-rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
