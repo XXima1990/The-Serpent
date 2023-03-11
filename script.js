@@ -1,3 +1,6 @@
+
+
+
 //  Sounds 
 const foodSound = new Audio('Food.mp3');
 const deathSound = new Audio('Dead.mp3');
@@ -47,11 +50,12 @@ let bodyColor = '#99cd32BD'; // bodyColor changing by eating Food
 
 // snakeBody Settings
 let snakeBody = [
-  { x: 3, y: 0 }, // Head
-  { x: 2, y: 0 }, // Body
-  { x: 1, y: 0 }, // Body
-  { x: 0, y: 0 }, // Tail
+  { x: Math.floor(horizontalSq / 2) - 1, y: Math.floor(verticalSq / 2) }, // Head
+  { x: Math.floor(horizontalSq / 2), y: Math.floor(verticalSq / 2) }, // Body
+  { x: Math.floor(horizontalSq / 2) + 1, y: Math.floor(verticalSq / 2) }, // Body
+  { x: Math.floor(horizontalSq / 2) + 2, y: Math.floor(verticalSq / 2) } // Tail
 ];
+
 const initialSnakeBodysnakeBodyLength = snakeBody.length;
 
 
@@ -87,23 +91,14 @@ const drawBoard = () => {
 
 const drawSquare = (x, y, color) => {
   ctx.fillStyle = color;
-  ctx.fillRect(
-    x * squareSize,
-    y * squareSize,
-    squareSize,
-    squareSize
-  );
-
-  // ctx.beginPath();
-  // ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+  ctx.beginPath();
+  ctx.arc(x * squareSize + squareSize / 2, y * squareSize + squareSize / 2, squareSize / 2, 0, Math.PI * 2);
+  ctx.fill();
 
   ctx.strokeStyle = boardColor;
-  ctx.strokeRect(
-    x * squareSize,
-    y * squareSize,
-    squareSize,
-    squareSize
-  );
+  ctx.beginPath();
+  ctx.arc(x * squareSize + squareSize / 2, y * squareSize + squareSize / 2, squareSize / 2, 0, Math.PI * 2);
+  ctx.stroke();
 }
 
 
@@ -413,10 +408,10 @@ frame();
 const restartGame = () => {
   // reset snakeBody length and position
   snakeBody = [
-    { x: 3, y: 0 }, // Head
-    { x: 2, y: 0 }, // Head
-    { x: 1, y: 0 }, // Body
-    { x: 0, y: 0 }, // Tail
+    { x: Math.floor(horizontalSq / 2) - 1, y: Math.floor(verticalSq / 2) }, // Head
+    { x: Math.floor(horizontalSq / 2), y: Math.floor(verticalSq / 2) }, // Body
+    { x: Math.floor(horizontalSq / 2) + 1, y: Math.floor(verticalSq / 2) }, // Body
+    { x: Math.floor(horizontalSq / 2) + 2, y: Math.floor(verticalSq / 2) } // Tail
   ];
 
   // reset snakeBody Colors
